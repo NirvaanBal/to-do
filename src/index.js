@@ -6,8 +6,12 @@ import allProjects from './read/readTodo';
 import overlay from './overlayHTML';
 
 const main = () => {
-  // add a to-do form
   const root = document.querySelector('#content');
+  const heading = document.createElement('h1');
+  heading.textContent = 'Super to-do';
+  root.appendChild(heading);
+
+  // add a to-do form
   root.appendChild(todoContainer);
   createTodo();
 
