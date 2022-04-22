@@ -10,7 +10,11 @@ const main = () => {
 
   // view all projects and related todos
   const addTodoForm = document.querySelector('#todo-form > form');
-  addTodoForm.addEventListener('submit', () => allProjects(todos));
+  addTodoForm.addEventListener('submit', () => {
+    const projectsDiv = document.getElementById('projects');
+    if (projectsDiv) projectsDiv.remove();
+    root.appendChild(allProjects(todos));
+  });
 };
 
 main();
