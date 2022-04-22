@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
 
-$base-color: #07689F;
-$primary-color: #A2D5F2;
-$secondary-color: #FAFAFA;
-$tertiary-color: #FF7E67;
+$base-color: #1d3557;
+$text-color: #f1faee;
+$primary-color: #457b9d;
+$secondary-color: #a8dadc;
+$tertiary-color: #e63946;
 
 * {
     margin: 0;
@@ -19,6 +20,7 @@ $tertiary-color: #FF7E67;
 body {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
     background-color: $base-color;
+    color: $text-color;
 }
 
 #content {
@@ -30,14 +32,22 @@ body {
     top: 0;
     left: 0;
     width: 400px;
-    background-color: $primary-color;
+    background-color: $text-color;
+    color: $base-color;
     padding: 40px;
     height: 100%;
+    z-index: 101;
+    transition: all 0.4s;
+    transform: translateX(-400px);
+
+    h2 {
+        margin-bottom: 20px;
+    }
 
     form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
 
         .form-control {
             display: flex;
@@ -54,18 +64,42 @@ body {
                 padding: 10px;
                 font-size: 15px;
                 max-width: 100%;
+                color: $base-color;
+                background-color: $secondary-color;
+                border-radius: 5px;
             }
 
             button {
-                background-color: $base-color;
+                background-color: $tertiary-color;
                 cursor: pointer;
-                color: $secondary-color;
-                font-weight: bold;
+                color: $text-color;
                 
                 &:hover, &:focus {
-                    background-color: $tertiary-color;
+                    background-color: $base-color;
                 }
             }
         }
+    }
+}
+
+#show-form {
+    background-color: $tertiary-color;
+    color: $text-color;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        background-color: $primary-color;
     }
 }

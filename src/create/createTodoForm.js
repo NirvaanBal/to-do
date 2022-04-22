@@ -6,10 +6,10 @@ const formHTML = `
         </div>
         <div class="form-control">
             <label for="description">Description</label>
-            <textarea name="description" id="description" required></textarea>
+            <textarea name="description" id="description" rows="5" required></textarea>
         </div>
         <div class="form-control">
-            <p>Due Date:</p>
+            <p>Due Date</p>
             <div class="date">
             <label for="date">Date</label>
             <select name="date" id="date">
@@ -64,10 +64,12 @@ const formHTML = `
         </div>
         <div class="form-control">
             <p>Priority</p>
+            <div>
             <label for="high">High</label>
             <input type="radio" name="priority" id="high" value="high" required />
             <label for="low">Low</label>
             <input type="radio" name="priority" id="low" value="low" required />
+            </div>
         </div>
         <div class="form-control">
             <label for="project">Project Title</label>
@@ -81,6 +83,9 @@ const formHTML = `
 
 const todoContainer = document.createElement('div');
 todoContainer.setAttribute('id', 'todo-form');
-todoContainer.insertAdjacentHTML('afterbegin', formHTML);
+const heading = document.createElement('h2');
+heading.textContent = 'Create a new todo';
+todoContainer.appendChild(heading);
+todoContainer.insertAdjacentHTML('beforeend', formHTML);
 
 export default todoContainer;
