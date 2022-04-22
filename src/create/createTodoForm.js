@@ -63,9 +63,9 @@ const formHTML = `
         <div class="form-control">
         <p>Prority</p>
         <label for="high">High</label>
-        <input type="radio" name="priority" id="high" />
+        <input type="radio" name="priority" id="high" value="high" />
         <label for="low">Low</label>
-        <input type="radio" name="priority" id="low" />
+        <input type="radio" name="priority" id="low" value="low" />
         </div>
         <div class="form-control">
         <label for="project">Project Title</label>
@@ -77,4 +77,8 @@ const formHTML = `
     </form>
 `;
 
-export default formHTML;
+const todoContainer = document.createElement('div');
+todoContainer.setAttribute('id', 'todo-form');
+todoContainer.insertAdjacentHTML('afterbegin', formHTML);
+
+export default todoContainer;
