@@ -10,6 +10,7 @@ const formHTML = `
         </div>
         <div class="form-control">
             <p>Due Date:</p>
+            <div class="date">
             <label for="date">Date</label>
             <select name="date" id="date">
                 <option value="1">1</option>
@@ -59,6 +60,7 @@ const formHTML = `
                 <option value="nov">November</option>
                 <option value="dec">December</option>
             </select>
+            </div>
         </div>
         <div class="form-control">
             <p>Priority</p>

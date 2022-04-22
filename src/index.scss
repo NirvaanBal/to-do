@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
 
-$base-color: #F6F7D4;
-$primary-color: #28DF99;
-$secondary-color: #99F3BD;
-$tertiary-color: #D2F6C5;
+$base-color: #07689F;
+$primary-color: #A2D5F2;
+$secondary-color: #FAFAFA;
+$tertiary-color: #FF7E67;
 
 * {
     margin: 0;
@@ -11,14 +11,61 @@ $tertiary-color: #D2F6C5;
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
-    color: inherit;
     font-family: inherit;
+    border: none;
+    outline: none;
 }
 
 body {
     font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    background-color: $base-color;
 }
 
 #content {
     margin: 40px;
+}
+
+#todo-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    background-color: $primary-color;
+    padding: 40px;
+    height: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .form-control {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .date {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            input[type="text"], textarea, select, button {
+                padding: 10px;
+                font-size: 15px;
+                max-width: 100%;
+            }
+
+            button {
+                background-color: $base-color;
+                cursor: pointer;
+                color: $secondary-color;
+                font-weight: bold;
+                
+                &:hover, &:focus {
+                    background-color: $tertiary-color;
+                }
+            }
+        }
+    }
 }
