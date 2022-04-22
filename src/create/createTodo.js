@@ -23,7 +23,9 @@ const createTodo = () => {
       todos[todo.project] = [];
       todos[todo.project].push(todo);
     }
+
+    form.reset();
   });
 };
 
-export default todos;
+export { createTodo, todos };

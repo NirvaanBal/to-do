@@ -72,7 +72,7 @@ const formHTML = `
             <input type="text" name="project" id="project" placeholder="Optional" />
         </div>
         <div class="form-control">
-            <button type="submit">Create</button>
+            <button type="submit" id="to-do-btn">Create</button>
         </div>
     </form>
 `;
