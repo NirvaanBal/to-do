@@ -2,11 +2,11 @@ const formHTML = `
     <form>
         <div class="form-control">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" />
+            <input type="text" name="title" id="title" required />
         </div>
         <div class="form-control">
             <label for="description">Description</label>
-            <textarea name="description" id="description"></textarea>
+            <textarea name="description" id="description" required></textarea>
         </div>
         <div class="form-control">
             <p>Due Date:</p>
@@ -61,11 +61,11 @@ const formHTML = `
             </select>
         </div>
         <div class="form-control">
-            <p>Prority</p>
+            <p>Priority</p>
             <label for="high">High</label>
-            <input type="radio" name="priority" id="high" value="high" checked />
+            <input type="radio" name="priority" id="high" value="high" required />
             <label for="low">Low</label>
-            <input type="radio" name="priority" id="low" value="low" />
+            <input type="radio" name="priority" id="low" value="low" required />
         </div>
         <div class="form-control">
             <label for="project">Project Title</label>

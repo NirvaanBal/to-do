@@ -5,12 +5,12 @@ class Todo {
     this.description = description;
     this.dueDate = dueDate;
     this.priority = priority;
+    this.project = this.project || 'due tasks';
     this.notes = [];
-    this.project = this.project || 'untitled';
   }
 
   isComplete() {
-    this.completed = !this.isComplete;
+    this.completed = !this.completed;
   }
 
   changePriority(value) {
