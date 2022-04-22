@@ -1,3 +1,5 @@
+import './readTodo.scss';
+
 const allProjects = (projects) => {
   const projectsHTML = document.createElement('div');
   projectsHTML.setAttribute('id', 'projects');
