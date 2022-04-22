@@ -1,3 +1,5 @@
+import './index.scss';
+
 import todoContainer from './create/createTodoForm';
 import { createTodo, todos } from './create/createTodo';
 import allProjects from './read/readTodo';
