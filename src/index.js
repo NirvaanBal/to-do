@@ -1,4 +1,4 @@
-import header from './layout/header';
+import intro from './layout/intro';
 import formContainer from './layout/form';
 
 import './index.scss';
@@ -13,8 +13,8 @@ const todos = {};
 const main = () => {
   const root = document.querySelector('#root');
 
-  // header
-  root.appendChild(header());
+  // intro
+  root.appendChild(intro());
 
   const content = document.createElement('div');
   content.classList.add('main');
