@@ -32,6 +32,8 @@ const main = () => {
     createTodo(todos, todoObj());
     // form.reset();
 
+    if (todos) document.querySelector('.intro').style.display = 'none';
+
     formContainer.style.transform = 'translateX(-360px)';
     document.querySelector('.overlay').style.display = 'none';
 
