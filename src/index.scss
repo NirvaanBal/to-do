@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono');
-
-$base-color: #1d3557;
-$text-color: #f1faee;
-$primary-color: #457b9d;
-$secondary-color: #a8dadc;
-$tertiary-color: #e63946;
+@import 'colors';
 
 * {
   margin: 0;
