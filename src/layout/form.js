@@ -64,11 +64,16 @@ const formHTML = `
         </div>
         <div class="form-control">
             <p>Priority</p>
-            <div>
-            <label for="high">High</label>
-            <input type="radio" name="priority" id="high" value="high" />
-            <label for="low">Low</label>
-            <input type="radio" name="priority" id="low" value="low" checked />
+            <div class="selection">
+                <div class="radio-control">
+                    <label for="high">High</label>
+                    <input type="radio" name="priority" id="high" value="high" />
+                </div>
+                <div class="radio-control">
+                    <label for="low">Low</label>
+                    <input type="radio" name="priority" id="low" value="low" checked />
+                </div>
+                </div>
             </div>
         </div>
         <div class="form-control">
