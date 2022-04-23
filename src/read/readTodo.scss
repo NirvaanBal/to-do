@@ -5,7 +5,7 @@ $secondary-color: #a8dadc;
 $tertiary-color: #e63946;
 
 #projects {
-    column-width: 320px;
+    column-width: 300px;
     column-gap: 20px;
     
     .project {
@@ -28,20 +28,26 @@ $tertiary-color: #e63946;
             padding: 15px;
             margin-bottom: 10px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
 
-            p {
-                text-transform: uppercase;
+            .task {
+                display: flex;
+                align-items: center;
 
-                &::before {
-                    content: '(';
-                }
-
-                &::after {
-                    content: ')';
+                small {
+                    text-transform: uppercase;
+                    font-size: 14px;
+    
+                    &::before {
+                        content: '(';
+                    }
+    
+                    &::after {
+                        content: ')';
+                    }
                 }
             }
+
 
             &:last-child {
                 margin-bottom: 0;
@@ -50,6 +56,27 @@ $tertiary-color: #e63946;
             h4 {
                 font-size: 20px;
                 margin-bottom: 5px;
+            }
+
+            .actions {
+                align-self: flex-end;
+
+                display: flex;
+                gap: 10px;
+                font-size: 16px;
+
+                button {
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    background-color: $text-color;
+                    color: $base-color;
+                    font-weight: bold;
+                }
             }
         }
     }

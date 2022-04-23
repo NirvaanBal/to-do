@@ -1,5 +1,14 @@
 import './readTodo.scss';
 
+const btn = (parent, purpose, action, id) => {
+  const btn = document.createElement('button');
+  btn.textContent = purpose;
+  btn.setAttribute('data-id', id);
+  btn.setAttribute('data-type', action);
+  btn.setAttribute('title', action);
+  parent.appendChild(btn);
+};
+
 const allProjects = (projects) => {
   const projectsHTML = document.createElement('div');
   projectsHTML.setAttribute('id', 'projects');
@@ -17,12 +26,23 @@ const allProjects = (projects) => {
       const todoContainer = document.createElement('div');
       todoContainer.classList.add('todo-item');
       rootDiv.appendChild(todoContainer);
+
+      const task = document.createElement('div');
+      task.setAttribute('class', 'task');
+      todoContainer.appendChild(task);
       const heading = document.createElement('h4');
-      heading.textContent = todo.title;
-      todoContainer.appendChild(heading);
-      const dueIn = document.createElement('p');
+      heading.textContent = todo.title + ' ';
+      task.appendChild(heading);
+      const dueIn = document.createElement('small');
       dueIn.textContent = todo.dueDate;
-      todoContainer.appendChild(dueIn);
+      heading.appendChild(dueIn);
+
+      const actions = document.createElement('div');
+      actions.classList.add('actions');
+      todoContainer.appendChild(actions);
+      btn(actions, 'C', 'complete', todo.id);
+      btn(actions, 'E', 'edit', todo.id);
+      btn(actions, 'D', 'delete', todo.id);
     }
   }
 

@@ -8,7 +8,7 @@ import overlay from './overlayHTML';
 const main = () => {
   const root = document.querySelector('#content');
   const heading = document.createElement('h1');
-  heading.textContent = 'Super to-do';
+  heading.textContent = 'TO-DO on Steroids';
   root.appendChild(heading);
 
   // add a to-do form
