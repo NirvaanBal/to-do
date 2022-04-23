@@ -23,12 +23,16 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 101;
 
   background-color: $text-color;
   color: $base-color;
   height: 100%;
   width: 360px;
   padding: 30px;
+
+  transition: transform 0.5s ease;
+  transform: translateX(-360px);
 
   .form-control {
     margin-top: 20px;
@@ -45,6 +49,16 @@ body {
       border-radius: 5px;
       background-color: $primary-color;
       color: $base-color;
+      border: solid 3px $primary-color;
+
+      &:focus,
+      &:hover {
+        border-color: $base-color;
+      }
+    }
+
+    textarea {
+      max-width: 100%;
     }
 
     input[type='radio'] {
@@ -56,6 +70,11 @@ body {
     .selection {
       display: flex;
       gap: 20px;
+
+      label,
+      input[type='radio'] {
+        cursor: pointer;
+      }
 
       .radio-control {
         display: flex;
@@ -69,11 +88,34 @@ body {
       color: $text-color;
       padding: 10px;
       cursor: pointer;
+      border: none;
 
       &:hover,
       &:focus {
         background-color: $base-color;
       }
     }
+  }
+}
+
+button#show-form {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $tertiary-color;
+  color: $text-color;
+  font-size: 50px;
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  &:hover {
+    color: $base-color;
+    background-color: $secondary-color;
   }
 }

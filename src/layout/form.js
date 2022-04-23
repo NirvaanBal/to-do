@@ -1,12 +1,16 @@
 const formHTML = `
     <form>
         <div class="form-control">
-            <label for="title">Title</label>
+            <label for="title">Task</label>
             <input type="text" name="title" id="title" required />
         </div>
         <div class="form-control">
-            <label for="description">Description</label>
-            <textarea name="description" id="description" rows="5" required></textarea>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" rows="5" required></textarea>
+        </div>
+        <div class="form-control">
+            <label for="project">Project</label>
+            <input type="text" name="project" id="project" placeholder="Optional" />
         </div>
         <div class="form-control">
             <p>Due Date</p>
@@ -75,10 +79,6 @@ const formHTML = `
                 </div>
                 </div>
             </div>
-        </div>
-        <div class="form-control">
-            <label for="project">Project Title</label>
-            <input type="text" name="project" id="project" placeholder="Optional" />
         </div>
         <div class="form-control">
             <button type="submit" id="to-do-btn">Create</button>

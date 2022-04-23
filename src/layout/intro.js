@@ -33,10 +33,6 @@ const intro = () => {
     rootDiv.appendChild(holderDiv);
   });
 
-  const newTodoBtn = document.createElement('button');
-  newTodoBtn.textContent = '+';
-  rootDiv.appendChild(newTodoBtn);
-
   return rootDiv;
 };
 
