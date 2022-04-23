@@ -25,17 +25,18 @@ const allProjects = (projects) => {
     for (let todo of projects[project]) {
       const todoContainer = document.createElement('div');
       todoContainer.classList.add('todo-item');
+      if (todo.priority === 'low') todoContainer.classList.add('low-p');
       rootDiv.appendChild(todoContainer);
 
       const task = document.createElement('div');
       task.setAttribute('class', 'task');
       todoContainer.appendChild(task);
       const heading = document.createElement('h4');
-      heading.textContent = todo.title + ' ';
+      heading.textContent = todo.title;
       task.appendChild(heading);
       const dueIn = document.createElement('small');
       dueIn.textContent = todo.dueDate;
-      heading.appendChild(dueIn);
+      task.appendChild(dueIn);
 
       const actions = document.createElement('div');
       actions.classList.add('actions');
