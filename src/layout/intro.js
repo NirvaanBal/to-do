@@ -33,6 +33,22 @@ const intro = () => {
     rootDiv.appendChild(holderDiv);
   });
 
+  const actions = document.createElement('div');
+  actions.setAttribute('class', 'actions');
+  rootDiv.appendChild(actions);
+
+  const priority = document.createElement('p');
+  priority.textContent = 'P - Toggle priority from low to high or vice-versa.';
+  actions.appendChild(priority);
+
+  const status = document.createElement('p');
+  status.textContent = 'C - Set status to complete or revert back to wokring.';
+  actions.appendChild(status);
+
+  const del = document.createElement('p');
+  del.textContent = 'D - Delete a specific/completed task.';
+  actions.appendChild(del);
+
   return rootDiv;
 };
 

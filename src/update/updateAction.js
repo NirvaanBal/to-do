@@ -9,7 +9,6 @@ const updateAction = (element, projects, action) => {
       return;
     } else if (action === 'completed' && task.id === taskId) {
       task.isComplete();
-      console.log(task);
       return;
     }
   }
