@@ -5,10 +5,8 @@ $secondary-color: #a8dadc;
 $tertiary-color: #e63946;
 
 #projects {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    // grid-gap: 30px;
     column-width: 320px;
+    column-gap: 20px;
     
     .project {
         page-break-inside: avoid;
@@ -29,6 +27,21 @@ $tertiary-color: #e63946;
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                text-transform: uppercase;
+
+                &::before {
+                    content: '(';
+                }
+
+                &::after {
+                    content: ')';
+                }
+            }
 
             &:last-child {
                 margin-bottom: 0;

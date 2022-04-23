@@ -1,5 +1,6 @@
 class Todo {
   constructor(title, description, dueDate, priority, project) {
+    this.id = new Date().toISOString();
     this.completed = false;
     this.title = title;
     this.description = description;
