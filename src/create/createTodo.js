@@ -8,7 +8,7 @@ const createTodo = (todos, todoObj) => {
     todoObj.dueDate,
     todoObj.priority
   );
-  if (!!project.value) todo.project = todoObj.project.toLowerCase();
+  if (!!todoObj.project) todo.project = todoObj.project.toLowerCase();
   if (todos[todo.project]) todos[todo.project].push(todo);
   else {
     todos[todo.project] = [];
