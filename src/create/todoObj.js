@@ -1,4 +1,4 @@
-import parseDate from '../parseDate';
+import parseDate from '../utils/parseDate';
 
 const todoObj = () => {
   const title = document.querySelector('#title').value;

@@ -1,9 +1,11 @@
-import './index.scss';
-
 import header from './layout/header';
 import formContainer from './layout/form';
-import todoObj from './create/todoObj';
+
+import './index.scss';
+
 import createTodo from './create/createTodo';
+import todoObj from './create/todoObj';
+import readTodos from './read/readTodos';
 
 // app state
 const todos = {};
@@ -24,6 +26,12 @@ const main = () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     createTodo(todos, todoObj());
+    // form.reset();
+
+    const allProjects = document.querySelector('.projects');
+    if (allProjects) allProjects.remove();
+
+    root.appendChild(readTodos(todos));
   });
 };
 

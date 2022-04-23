@@ -1,4 +1,4 @@
-import Todo from '../Todo';
+import Todo from './Todo';
 
 const createTodo = (todos, todoObj) => {
   let todo = null;
