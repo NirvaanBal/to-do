@@ -144,6 +144,16 @@ button#show-form {
       padding: 10px;
       margin-bottom: 10px;
 
+      &.high {
+        color: $text-color;
+        background-color: $secondary-color;
+      }
+
+      &:hover {
+        background-color: $base-color;
+        color: $text-color;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }

@@ -16,6 +16,10 @@ const readTodos = (projects) => {
       todoDiv.classList.add('todo');
       projectDiv.appendChild(todoDiv);
 
+      if (todo.priority === 'high') {
+        todoDiv.classList.add('high');
+      }
+
       const flexDiv = document.createElement('div');
       todoDiv.appendChild(flexDiv);
 
