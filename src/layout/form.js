@@ -66,9 +66,9 @@ const formHTML = `
             <p>Priority</p>
             <div>
             <label for="high">High</label>
-            <input type="radio" name="priority" id="high" value="high" required />
+            <input type="radio" name="priority" id="high" value="high" />
             <label for="low">Low</label>
-            <input type="radio" name="priority" id="low" value="low" required />
+            <input type="radio" name="priority" id="low" value="low" checked />
             </div>
         </div>
         <div class="form-control">
