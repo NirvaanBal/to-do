@@ -7,7 +7,6 @@ class Todo {
     this.dueDate = dueDate;
     this.priority = priority;
     this.project = this.project || 'due tasks';
-    this.notes = [];
   }
 
   isComplete() {

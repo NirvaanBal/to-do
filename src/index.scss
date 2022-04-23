@@ -149,6 +149,11 @@ button#show-form {
         background-color: $secondary-color;
       }
 
+      &.completed {
+        background-color: $tertiary-color;
+        color: $text-color;
+      }
+
       &:hover {
         cursor: pointer;
       }

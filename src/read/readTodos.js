@@ -46,6 +46,9 @@ const readTodos = (projects) => {
 
       const changePriorityBtn = actionBtn('priority', 'p');
       actions.appendChild(changePriorityBtn);
+
+      const changeStatusBtn = actionBtn('completed', 'c');
+      actions.appendChild(changeStatusBtn);
     }
   }
 
