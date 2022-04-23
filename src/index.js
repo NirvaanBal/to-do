@@ -1,46 +1,23 @@
 import './index.scss';
 
-import todoContainer from './create/createTodoForm';
-import { createTodo, todos } from './create/createTodo';
-import allProjects from './read/readTodo';
-import overlay from './overlayHTML';
+import header from './layout/header';
+import formContainer from './layout/form';
+
+// app state
+const todos = {};
 
 const main = () => {
-  const root = document.querySelector('#content');
-  const heading = document.createElement('h1');
-  heading.textContent = 'TO-DO on Steroids';
-  root.appendChild(heading);
+  const root = document.querySelector('#root');
 
-  // add a to-do form
-  root.appendChild(todoContainer);
-  createTodo();
+  // header
+  root.appendChild(header());
 
-  // view all projects and related todos
-  const addTodoForm = document.querySelector('#todo-form > form');
-  addTodoForm.addEventListener('submit', () => {
-    const projectsDiv = document.getElementById('projects');
-    if (projectsDiv) projectsDiv.remove();
-    root.appendChild(allProjects(todos));
-    addTodoForm.parentElement.style.transform = 'translateX(-400px)';
-    overlay.style.display = 'none';
-  });
+  const content = document.createElement('div');
+  content.classList.add('main');
+  root.appendChild(content);
 
-  // show form button
-  root.appendChild(overlay);
-  const showFormBtn = document.createElement('button');
-  showFormBtn.textContent = '+';
-  showFormBtn.setAttribute('id', 'show-form');
-  root.appendChild(showFormBtn);
-  showFormBtn.addEventListener('click', () => {
-    addTodoForm.parentElement.style.transform = 'translateX(0)';
-    overlay.style.display = 'block';
-  });
-
-  // remove form
-  overlay.addEventListener('click', () => {
-    addTodoForm.parentElement.style.transform = 'translateX(-400px)';
-    overlay.style.display = 'none';
-  });
+  // form
+  content.appendChild(formContainer);
 };
 
 main();

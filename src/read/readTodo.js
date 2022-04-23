@@ -1,11 +1,13 @@
-import './readTodo.scss';
-
-const btn = (parent, purpose, action, id) => {
+const btn = (parent, purpose, action) => {
   const btn = document.createElement('button');
   btn.textContent = purpose;
-  btn.setAttribute('data-id', id);
   btn.setAttribute('data-type', action);
   btn.setAttribute('title', action);
+  btn.addEventListener('click', (e) => {
+    if (action === 'priority') {
+      console.log(e.target.parentElement.parentElement.dataset.id);
+    }
+  });
   parent.appendChild(btn);
 };
 
@@ -25,7 +27,8 @@ const allProjects = (projects) => {
     for (let todo of projects[project]) {
       const todoContainer = document.createElement('div');
       todoContainer.classList.add('todo-item');
-      if (todo.priority === 'low') todoContainer.classList.add('low-p');
+      todoContainer.setAttribute('data-id', todo.id);
+      if (todo.priority === 'high') todoContainer.classList.add('high-p');
       rootDiv.appendChild(todoContainer);
 
       const task = document.createElement('div');
@@ -41,10 +44,10 @@ const allProjects = (projects) => {
       const actions = document.createElement('div');
       actions.classList.add('actions');
       todoContainer.appendChild(actions);
-      btn(actions, 'P', 'priority', todo.id);
-      btn(actions, 'C', 'complete', todo.id);
-      btn(actions, 'E', 'edit', todo.id);
-      btn(actions, 'D', 'delete', todo.id);
+      btn(actions, 'P', 'priority');
+      btn(actions, 'C', 'complete');
+      btn(actions, 'E', 'edit');
+      btn(actions, 'D', 'delete');
     }
   }
 

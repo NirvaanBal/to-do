@@ -81,11 +81,11 @@ const formHTML = `
     </form>
 `;
 
-const todoContainer = document.createElement('div');
-todoContainer.setAttribute('id', 'todo-form');
+const formContainer = document.createElement('div');
+formContainer.setAttribute('id', 'todo-form');
 const heading = document.createElement('h2');
-heading.textContent = 'Create a new todo';
-todoContainer.appendChild(heading);
-todoContainer.insertAdjacentHTML('beforeend', formHTML);
+heading.textContent = 'Create a new task';
+formContainer.appendChild(heading);
+formContainer.insertAdjacentHTML('beforeend', formHTML);
 
-export default todoContainer;
+export default formContainer;

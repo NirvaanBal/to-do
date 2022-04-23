@@ -7,103 +7,18 @@ $secondary-color: #a8dadc;
 $tertiary-color: #e63946;
 
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: inherit;
-    border: none;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: inherit;
+  border: none;
+  outline: none;
 }
 
 body {
-    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
-    background-color: $base-color;
-    color: $text-color;
-}
-
-#content {
-    margin: 20px;
-}
-
-h1 {
-    margin-bottom: 15px;
-}
-
-#todo-form {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400px;
-    background-color: $text-color;
-    color: $base-color;
-    padding: 40px;
-    height: 100%;
-    z-index: 101;
-    transition: all 0.4s;
-    transform: translateX(-400px);
-
-    h2 {
-        margin-bottom: 20px;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        .form-control {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-
-            .date {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-
-            input[type="text"], textarea, select, button {
-                padding: 10px;
-                font-size: 15px;
-                max-width: 100%;
-                color: $base-color;
-                background-color: $secondary-color;
-                border-radius: 5px;
-            }
-
-            button {
-                background-color: $tertiary-color;
-                cursor: pointer;
-                color: $text-color;
-                
-                &:hover, &:focus {
-                    background-color: $base-color;
-                }
-            }
-        }
-    }
-}
-
-#show-form {
-    background-color: $tertiary-color;
-    color: $text-color;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 40px;
-    font-weight: bold;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    border-radius: 40px;
-    cursor: pointer;
-
-    &:hover, &:focus {
-        background-color: $primary-color;
-    }
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+  background-color: $base-color;
+  color: $text-color;
 }
