@@ -41,6 +41,7 @@ const allProjects = (projects) => {
       const actions = document.createElement('div');
       actions.classList.add('actions');
       todoContainer.appendChild(actions);
+      btn(actions, 'P', 'priority', todo.id);
       btn(actions, 'C', 'complete', todo.id);
       btn(actions, 'E', 'edit', todo.id);
       btn(actions, 'D', 'delete', todo.id);
