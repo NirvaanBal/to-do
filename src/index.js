@@ -7,9 +7,38 @@ import overlay from './layout/overlay';
 import createTodo from './create/createTodo';
 import todoObj from './create/todoObj';
 import readTodos from './read/readTodos';
+import updatePriority from './update/updatePriority';
 
 // app state
-const todos = {};
+const todos = {
+  ruby: [
+    {
+      id: 1,
+      title: 'learn ruby',
+      description: 'i am learning ruby',
+      dueDate: 'apr 30',
+      priority: 'high',
+      project: 'ruby',
+    },
+    {
+      id: 2,
+      title: 'learn rails',
+      description: 'i will learn ruby on rails',
+      dueDate: 'jun 2',
+      priority: 'low',
+      project: 'ruby',
+    },
+  ],
+  'due tasks': [
+    {
+      id: 3,
+      title: 'learn react',
+      description: 'Learning react...',
+      dueDate: 'apr 28',
+      priority: 'low',
+    },
+  ],
+};
 
 const main = () => {
   const root = document.querySelector('#root');
@@ -53,6 +82,24 @@ const main = () => {
   document.querySelector('.overlay').addEventListener('click', (e) => {
     formContainer.style.transform = 'translateX(-360px)';
     e.target.style.display = 'none';
+  });
+
+  /*************************
+   *
+   * TESTING
+   */
+  root.appendChild(readTodos(todos));
+
+  // toggle priority
+  const priorityBtns = document.querySelectorAll(
+    'button[data-action="priority"]'
+  );
+  priorityBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const el = e.target.parentElement.parentElement;
+      el.classList.toggle('high');
+      updatePriority(el, todos);
+    });
   });
 };
 

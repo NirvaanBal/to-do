@@ -1,3 +1,11 @@
+const actionBtn = (action, type) => {
+  const btn = document.createElement('button');
+  btn.textContent = type;
+  btn.setAttribute('data-action', action);
+
+  return btn;
+};
+
 const readTodos = (projects) => {
   const rootDiv = document.createElement('div');
   rootDiv.classList.add('projects');
@@ -13,6 +21,7 @@ const readTodos = (projects) => {
 
     for (let todo of projects[project]) {
       const todoDiv = document.createElement('div');
+      todoDiv.setAttribute('data-id', todo.id);
       todoDiv.classList.add('todo');
       projectDiv.appendChild(todoDiv);
 
@@ -30,6 +39,13 @@ const readTodos = (projects) => {
       const date = document.createElement('p');
       date.textContent = todo.dueDate;
       flexDiv.appendChild(date);
+
+      const actions = document.createElement('div');
+      actions.setAttribute('class', 'actions');
+      todoDiv.appendChild(actions);
+
+      const changePriorityBtn = actionBtn('priority', 'p');
+      actions.appendChild(changePriorityBtn);
     }
   }
 
