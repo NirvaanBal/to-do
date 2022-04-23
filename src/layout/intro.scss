@@ -28,4 +28,26 @@
       background-color: $tertiary-color;
     }
   }
+
+  button {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiary-color;
+    color: $text-color;
+    font-size: 50px;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    &:hover {
+      color: $base-color;
+      background-color: $secondary-color;
+    }
+  }
 }
