@@ -38,7 +38,6 @@ const readTodos = (projects) => {
 
       todoDiv.addEventListener('click', (e) => {
         const todoXL = document.querySelector('.todo-xl');
-        if (todoXL) todoXL.remove();
         projectDiv.appendChild(readTodoHTML(readTodo(todo.id)));
       });
 
