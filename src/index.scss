@@ -105,8 +105,8 @@ button#show-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $tertiary-color;
-  color: $text-color;
+  background-color: $text-color;
+  color: $base-color;
   font-size: 50px;
   cursor: pointer;
 
@@ -115,7 +115,6 @@ button#show-form {
   right: 30px;
 
   &:hover {
-    color: $base-color;
     background-color: $secondary-color;
   }
 }
