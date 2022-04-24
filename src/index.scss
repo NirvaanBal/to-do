@@ -212,6 +212,38 @@ button#show-form {
   height: 100%;
   padding: 30px;
 
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   color: $text-color;
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  h3 {
+    text-transform: capitalize !important;
+    font-size: 20px !important;
+  }
+
+  button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    color: $base-color;
+    background-color: $text-color;
+    font-weight: bold;
+    border-radius: 50px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $tertiary-color;
+      color: $text-color;
+    }
+  }
 }

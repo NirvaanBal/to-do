@@ -21,7 +21,7 @@ const readTodoHTML = (task) => {
   rootDiv.appendChild(completed);
 
   const priority = document.createElement('h3');
-  priority.textContent = `Priority: ${task.priority.toUpperCase()}`;
+  priority.textContent = `Priority: ${task.priority}`;
   rootDiv.appendChild(priority);
 
   const closeBtn = document.createElement('button');
