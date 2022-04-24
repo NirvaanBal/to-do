@@ -238,15 +238,15 @@ button#show-form {
     height: 50px;
     width: 50px;
     font-size: 20px;
-    color: $base-color;
-    background-color: $text-color;
+    color: $text-color;
+    background-color: $tertiary-color;
     font-weight: bold;
     border-radius: 50px;
 
     &:hover {
       cursor: pointer;
-      background-color: $tertiary-color;
-      color: $text-color;
+      color: $base-color;
+      background-color: $text-color;
     }
   }
 }
