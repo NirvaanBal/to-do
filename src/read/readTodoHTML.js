@@ -14,15 +14,15 @@ const readTodoHTML = (task) => {
   dueDate.textContent = `Due date: ${task.dueDate}`;
   rootDiv.appendChild(dueDate);
 
+  const priority = document.createElement('h3');
+  priority.textContent = `Priority: ${task.priority}`;
+  rootDiv.appendChild(priority);
+
   const completed = document.createElement('h3');
   completed.textContent = `Status: ${
     task.completed ? 'Complete' : 'Uncomplete'
   }`;
   rootDiv.appendChild(completed);
-
-  const priority = document.createElement('h3');
-  priority.textContent = `Priority: ${task.priority}`;
-  rootDiv.appendChild(priority);
 
   const closeBtn = document.createElement('button');
   closeBtn.innerHTML = '&#10006';
