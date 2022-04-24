@@ -14,7 +14,7 @@ const updateAction = (element, projects, action) => {
       projects[project] = [...projects[project]].filter((task) => {
         return task.id !== taskId;
       });
-      console.log(projects[project]);
+      if (projects[project].length === 0) delete projects[project];
       return;
     }
   }
