@@ -10,6 +10,12 @@ const updateAction = (element, projects, action) => {
     } else if (action === 'completed' && task.id === taskId) {
       task.isComplete();
       return;
+    } else if (action === 'delete' && task.id === taskId) {
+      projects[project] = [...projects[project]].filter((task) => {
+        return task.id !== taskId;
+      });
+      console.log(projects[project]);
+      return;
     }
   }
 };

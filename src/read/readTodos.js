@@ -1,7 +1,19 @@
-const actionBtn = (action, type) => {
+import { todos } from '../index';
+import updateAction from '../update/updateAction';
+
+const actionBtn = (action, type, taskId) => {
   const btn = document.createElement('button');
   btn.textContent = type;
   btn.setAttribute('data-action', action);
+  btn.setAttribute('data-id', taskId);
+
+  btn.addEventListener('click', (e) => {
+    const el = e.target.parentElement.parentElement;
+    if (action === 'priority') el.classList.toggle('high');
+    else if (action === 'completed') el.classList.toggle('completed');
+    else if (action === 'delete') el.style.display = 'none';
+    updateAction(el, todos, e.target.dataset.action);
+  });
 
   return btn;
 };
@@ -44,11 +56,14 @@ const readTodos = (projects) => {
       actions.setAttribute('class', 'actions');
       todoDiv.appendChild(actions);
 
-      const changePriorityBtn = actionBtn('priority', 'p');
+      const changePriorityBtn = actionBtn('priority', 'p', todo.id);
       actions.appendChild(changePriorityBtn);
 
-      const changeStatusBtn = actionBtn('completed', 'c');
+      const changeStatusBtn = actionBtn('completed', 'c', todo.id);
       actions.appendChild(changeStatusBtn);
+
+      const deleteTodoBtn = actionBtn('delete', 'd', todo.id);
+      actions.appendChild(deleteTodoBtn);
     }
   }
 

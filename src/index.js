@@ -7,10 +7,9 @@ import overlay from './layout/overlay';
 import createTodo from './create/createTodo';
 import todoObj from './create/todoObj';
 import readTodos from './read/readTodos';
-import updateAction from './update/updateAction';
 
 // app state
-const todos = {};
+export const todos = {};
 
 const main = () => {
   const root = document.querySelector('#root');
@@ -42,30 +41,6 @@ const main = () => {
     if (allProjects) allProjects.remove();
 
     root.appendChild(readTodos(todos));
-
-    // toggle priority
-    const priorityBtns = document.querySelectorAll(
-      'button[data-action="priority"]'
-    );
-    priorityBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const el = e.target.parentElement.parentElement;
-        el.classList.toggle('high');
-        updateAction(el, todos, e.target.dataset.action);
-      });
-    });
-
-    // toggle complete status
-    const statusBtns = document.querySelectorAll(
-      'button[data-action="completed"]'
-    );
-    statusBtns.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const el = e.target.parentElement.parentElement;
-        el.classList.toggle('completed');
-        updateAction(el, todos, e.target.dataset.action);
-      });
-    });
   });
 
   // show/hide form on-demand
