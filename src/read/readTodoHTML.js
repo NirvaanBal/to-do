@@ -24,7 +24,14 @@ const readTodoHTML = (task) => {
   }`;
   rootDiv.appendChild(completed);
 
+  const editBtn = document.createElement('button');
+  editBtn.classList.add('edit');
+  editBtn.textContent = 'Edit';
+  editBtn.setAttribute('data-id', task.id);
+  rootDiv.appendChild(editBtn);
+
   const closeBtn = document.createElement('button');
+  closeBtn.classList.add('close');
   closeBtn.innerHTML = '&#10006';
   rootDiv.appendChild(closeBtn);
   closeBtn.addEventListener('click', (e) => {
