@@ -1,5 +1,4 @@
-import { todos } from '../index';
-import updateAction from '../update/updateAction';
+import updateHelper from '../update/updateHelper';
 
 const actionBtn = (action, type, taskId) => {
   const btn = document.createElement('button');
@@ -9,17 +8,7 @@ const actionBtn = (action, type, taskId) => {
 
   btn.addEventListener('click', (e) => {
     const el = e.target.parentElement.parentElement;
-    updateAction(el, todos, e.target.dataset.action);
-
-    if (action === 'priority') el.classList.toggle('high');
-    else if (action === 'completed') el.classList.toggle('completed');
-    else if (action === 'delete') {
-      const project = el.parentElement;
-      el.remove();
-      if (action === 'delete' && !project.firstChild.nextElementSibling) {
-        project.remove();
-      }
-    }
+    updateHelper(el, action);
   });
 
   return btn;
