@@ -1,4 +1,6 @@
 import updateHelper from '../update/updateHelper';
+import readTodo from './readTodo';
+import readTodoHTML from './readTodoHTML';
 
 const actionBtn = (action, type, taskId) => {
   const btn = document.createElement('button');
@@ -7,6 +9,7 @@ const actionBtn = (action, type, taskId) => {
   btn.setAttribute('data-id', taskId);
 
   btn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const el = e.target.parentElement.parentElement;
     updateHelper(el, action);
   });
@@ -32,6 +35,12 @@ const readTodos = (projects) => {
       todoDiv.setAttribute('data-id', todo.id);
       todoDiv.classList.add('todo');
       projectDiv.appendChild(todoDiv);
+
+      todoDiv.addEventListener('click', (e) => {
+        const todoXL = document.querySelector('.todo-xl');
+        if (todoXL) todoXL.remove();
+        projectDiv.appendChild(readTodoHTML(readTodo(todo.id)));
+      });
 
       if (todo.priority === 'high') todoDiv.classList.add('high');
       if (todo.completed) todoDiv.classList.add('completed');
