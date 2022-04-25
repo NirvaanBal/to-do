@@ -7,12 +7,13 @@ import overlay from './layout/overlay';
 import createTodo from './create/createTodo';
 import todoObj from './create/todoObj';
 import readTodos from './read/readTodos';
+import editTodo from './update/editTodo';
 
 // app state
 export const todos = {};
 
 const main = () => {
-  const root = document.querySelector('#root');
+  const root = document.getElementById('root');
 
   // intro
   root.appendChild(intro());
@@ -29,7 +30,12 @@ const main = () => {
   const form = formContainer.querySelector('form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    createTodo(todos, todoObj());
+    if (form.dataset.edit === 'false') createTodo(todos, todoObj());
+    else if (form.dataset.edit === 'true') {
+      editTodo(form.dataset.id, todoObj());
+      form.removeAttribute('data-id');
+      form.dataset.edit = 'false';
+    }
     // form.reset();
 
     if (todos) document.querySelector('.intro').style.display = 'none';

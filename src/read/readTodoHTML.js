@@ -29,6 +29,17 @@ const readTodoHTML = (task) => {
   editBtn.textContent = 'Edit';
   editBtn.setAttribute('data-id', task.id);
   rootDiv.appendChild(editBtn);
+  editBtn.addEventListener('click', (e) => {
+    const overlay = document.querySelector('.overlay');
+    const formContainer = document.querySelector('#todo-form');
+    formContainer.style.transform = 'translateX(0)';
+    formContainer.style.zIndex = 104;
+    overlay.style.display = 'block';
+    overlay.style.zIndex = 103;
+    const form = formContainer.querySelector('form');
+    form.dataset.edit = 'true';
+    form.setAttribute('data-id', e.target.dataset.id);
+  });
 
   const closeBtn = document.createElement('button');
   closeBtn.classList.add('close');

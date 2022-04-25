@@ -2,7 +2,7 @@ const formHTML = () => {
   const day = new Date().getDate();
   const month = new Date().getMonth();
 
-  let html = `<form>
+  let html = `<form data-edit="false">
         <div class="form-control">
             <label for="title">Task</label>
             <input type="text" name="title" id="title" required />
