@@ -30,13 +30,16 @@ const main = () => {
   const form = formContainer.querySelector('form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (form.dataset.edit === 'false') createTodo(todos, todoObj());
-    else if (form.dataset.edit === 'true') {
+    if (form.dataset.edit === 'false') {
+      form.querySelector('button').textContent = 'Create';
+      form.querySelector('#project-field').style.display = 'flex';
+      createTodo(todos, todoObj());
+    } else if (form.dataset.edit === 'true') {
       editTodo(form.dataset.id, todoObj());
       form.removeAttribute('data-id');
       form.dataset.edit = 'false';
     }
-    // form.reset();
+    form.reset();
 
     if (todos) document.querySelector('.intro').style.display = 'none';
 

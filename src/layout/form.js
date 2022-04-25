@@ -11,7 +11,7 @@ const formHTML = () => {
         <label for="description">Description</label>
         <textarea name="description" id="description" rows="5" required></textarea>
         </div>
-        <div class="form-control">
+        <div class="form-control" id="project-field">
             <label for="project">Project</label>
             <input type="text" name="project" id="project" placeholder="Optional" />
         </div>

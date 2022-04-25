@@ -39,6 +39,10 @@ const readTodoHTML = (task) => {
     const form = formContainer.querySelector('form');
     form.dataset.edit = 'true';
     form.setAttribute('data-id', e.target.dataset.id);
+    const button = form.querySelector('button');
+    button.textContent = 'Change';
+    const projectField = form.querySelector('#project-field');
+    projectField.style.display = 'none';
   });
 
   const closeBtn = document.createElement('button');

@@ -9,10 +9,12 @@ const editTodo = (taskId, todoObj) => {
         todo.description = todoObj.description;
         todo.dueDate = todoObj.dueDate;
         todo.priority = todoObj.priority;
-        todo.project = todoObj.project;
+        todo.project = project;
       }
     }
   }
+
+  return todos;
 };
 
 export default editTodo;
