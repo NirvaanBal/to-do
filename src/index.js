@@ -31,8 +31,6 @@ const main = () => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (form.dataset.edit === 'false') {
-      form.querySelector('button').textContent = 'Create';
-      form.querySelector('#project-field').style.display = 'flex';
       createTodo(todos, todoObj());
     } else if (form.dataset.edit === 'true') {
       editTodo(form.dataset.id, todoObj());
@@ -60,7 +58,13 @@ const main = () => {
   });
 
   document.querySelector('.overlay').addEventListener('click', (e) => {
+    form.reset();
     formContainer.style.transform = 'translateX(-360px)';
+    form.dataset.edit = 'false';
+    form.querySelector('button').textContent = 'Create';
+    form.querySelector('#project-field').style.display = 'flex';
+    form.querySelector('.selection').parentElement.style.display = 'flex';
+
     e.target.style.display = 'none';
   });
 };

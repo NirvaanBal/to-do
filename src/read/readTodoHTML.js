@@ -43,6 +43,20 @@ const readTodoHTML = (task) => {
     button.textContent = 'Change';
     const projectField = form.querySelector('#project-field');
     projectField.style.display = 'none';
+    const priority = form.querySelector('.selection');
+    priority.parentElement.style.display = 'none';
+
+    const title = form.querySelector('#title');
+    title.value = task.title;
+
+    const description = form.querySelector('#description');
+    description.value = task.description;
+
+    const date = form.querySelector('#date');
+    date.value = task.dueDate.split(' ')[1];
+
+    const month = form.querySelector('#month');
+    month.value = task.dueDate.split(' ')[0];
   });
 
   const closeBtn = document.createElement('button');
