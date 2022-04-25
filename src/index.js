@@ -10,13 +10,22 @@ import readTodos from './read/readTodos';
 import editTodo from './update/editTodo';
 
 // app state
-export const todos = {};
+export let todos = {};
+
+if (localStorage.getItem('projects')) {
+  todos = JSON.parse(localStorage.getItem('projects'));
+}
 
 const main = () => {
   const root = document.getElementById('root');
 
   // intro
   root.appendChild(intro());
+
+  if (localStorage.getItem('projects')) {
+    document.querySelector('.intro').style.display = 'none';
+    root.appendChild(readTodos(JSON.parse(localStorage.getItem('projects'))));
+  }
 
   const content = document.createElement('div');
   content.classList.add('main');
@@ -29,6 +38,7 @@ const main = () => {
 
   const form = formContainer.querySelector('form');
   form.addEventListener('submit', (e) => {
+    let oldTodos = localStorage.getItem('projects');
     e.preventDefault();
     if (form.dataset.edit === 'false') {
       createTodo(todos, todoObj());
@@ -39,15 +49,17 @@ const main = () => {
     }
     form.reset();
 
-    if (todos) document.querySelector('.intro').style.display = 'none';
-
     formContainer.style.transform = 'translateX(-360px)';
     document.querySelector('.overlay').style.display = 'none';
 
     const allProjects = document.querySelector('.projects');
     if (allProjects) allProjects.remove();
 
-    root.appendChild(readTodos(todos));
+    if (oldTodos !== JSON.stringify(todos)) {
+      localStorage.setItem('projects', JSON.stringify(todos));
+    }
+
+    root.appendChild(readTodos(JSON.parse(localStorage.getItem('projects'))));
   });
 
   // show/hide form on-demand
