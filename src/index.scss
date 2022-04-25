@@ -26,8 +26,8 @@ body {
   overflow: auto;
   z-index: 101;
 
-  background-color: $text-color;
-  color: $base-color;
+  background-color: $base-color;
+  color: $text-color;
   height: 100%;
   width: 360px;
   padding: 30px;
@@ -46,15 +46,14 @@ body {
     select,
     button {
       font-size: 16px;
-      padding: 5px;
+      padding: 8px;
       border-radius: 5px;
-      background-color: $primary-color;
+      background-color: $text-color;
       color: $base-color;
-      border: solid 3px $primary-color;
 
       &:focus,
       &:hover {
-        border-color: $base-color;
+        background-color: $primary-color;
       }
     }
 
@@ -63,7 +62,7 @@ body {
     }
 
     input[type='radio'] {
-      accent-color: $primary-color;
+      accent-color: $text-color;
       width: 20px;
       height: 20px;
     }
@@ -93,7 +92,8 @@ body {
 
       &:hover,
       &:focus {
-        background-color: $base-color;
+        color: $base-color;
+        background-color: $text-color;
       }
     }
   }
