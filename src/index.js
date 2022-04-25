@@ -38,7 +38,7 @@ const main = () => {
 
   const form = formContainer.querySelector('form');
   form.addEventListener('submit', (e) => {
-    let oldTodos = localStorage.getItem('projects');
+    let oldTodos = JSON.stringify(todos);
     e.preventDefault();
     if (form.dataset.edit === 'false') {
       createTodo(todos, todoObj());
@@ -49,6 +49,8 @@ const main = () => {
     }
     form.reset();
 
+    if (todos) document.querySelector('.intro').style.display = 'none';
+
     formContainer.style.transform = 'translateX(-360px)';
     document.querySelector('.overlay').style.display = 'none';
 
@@ -57,9 +59,8 @@ const main = () => {
 
     if (oldTodos !== JSON.stringify(todos)) {
       localStorage.setItem('projects', JSON.stringify(todos));
+      root.appendChild(readTodos(JSON.parse(localStorage.getItem('projects'))));
     }
-
-    root.appendChild(readTodos(JSON.parse(localStorage.getItem('projects'))));
   });
 
   // show/hide form on-demand

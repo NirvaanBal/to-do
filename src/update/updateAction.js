@@ -4,11 +4,14 @@ const updateAction = (element, projects, action) => {
 
   for (let task of projects[project]) {
     if (action === 'priority' && task.id === taskId) {
-      if (task.priority === 'high') task.changePriority('low');
-      else task.changePriority('high');
+      // if (task.priority === 'low') task.changePriority('high');
+      // else task.changePriority('low');
+      if (task.priority === 'low') task.priority = 'high';
+      else task.priority = 'low';
       return;
     } else if (action === 'completed' && task.id === taskId) {
-      task.isComplete();
+      // task.isComplete();
+      task.completed = !task.completed;
       return;
     } else if (action === 'delete' && task.id === taskId) {
       projects[project] = [...projects[project]].filter((task) => {
