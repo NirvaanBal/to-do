@@ -68,6 +68,9 @@ const main = () => {
     const overlay = document.querySelector('.overlay');
     formContainer.style.transform = 'translateX(0)';
     overlay.style.display = 'block';
+    form.querySelector('button').textContent = 'Create';
+    form.querySelector('#project-field').style.display = 'flex';
+    form.querySelector('.selection').parentElement.style.display = 'flex';
   });
 
   document.querySelector('.overlay').addEventListener('click', (e) => {
