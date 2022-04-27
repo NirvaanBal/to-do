@@ -15,7 +15,7 @@ An exaggerated version of staple web development project; To-do list.
 - Sass
 - Webpack
 
-### Bibliography
+## Bibliography
 
 - Project Idea - [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
 - UI Inspiration - [Trello](https://trello.com/)
