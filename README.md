@@ -1,6 +1,6 @@
 # To-Do on Steroids
 
-An exaggerated version of staple web development project; To-do list.
+An exaggerated version of staple web development project; To-do list. [Live here](https://nirvaanbal.github.io/to-do/).
 
 ## Features
 
