@@ -15,6 +15,10 @@ An exaggerated version of staple web development project; To-do list. [Live here
 - Sass
 - Webpack
 
+## Raison d'être
+
+To get hold of data persistency and modern JS tooling.
+
 ## Bibliography
 
 - Project Idea - [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
